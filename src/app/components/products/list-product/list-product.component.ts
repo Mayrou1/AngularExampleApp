@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { Product } from '../../../models/product';
 import { ProductService } from '../../../services/product.service';
 import { NgPipesModule } from 'ngx-pipes';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-list-product',
   standalone: true,
-  imports: [NgPipesModule],
+  imports: [NgPipesModule, RouterModule],
   templateUrl: './list-product.component.html',
   styleUrl: './list-product.component.scss'
 })

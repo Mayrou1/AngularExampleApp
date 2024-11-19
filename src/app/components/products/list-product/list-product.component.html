@@ -11,7 +11,7 @@
                 <p class="product-price">${{product.price}}</p>
                 <p class="product-description">{{product.description  | shorten: 90: '...'}}</p>
                 <div class="button-container">
-                    <button class="buttonMore">More Details</button>
+                    <button class="buttonMore" [routerLink]="['../show', product.id]" routerLinkActive="router-link-active" >More Details</button>
                 </div>
               </div>
             </div> 
