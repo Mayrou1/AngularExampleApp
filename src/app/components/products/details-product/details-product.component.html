@@ -1,0 +1,35 @@
+<div class="container">
+  <h1>Details of Products</h1><br>
+  @if (product){
+  <section class="product-container">
+    <!-- left side -->
+    <div class="img-card">
+      <img [src]="featuredImage" alt="" id="featured-image" />
+      <!-- small img -->
+      <div class="small-Card">
+        @for (image of product.images; track image){
+          <img [src]="image" alt="" class="small-Img" (click)="featuredImage = image" [style]="{'border': featuredImage === image ? '3px solid #000' : 'none'}"/> 
+        } 
+      </div>
+    </div>
+    <!-- Right side --> 
+      <div class="product-info">
+        <span class="badge badge-success">{{product.category.name}}</span>
+        <h3>{{product.title}}</h3>
+        <h5>Price: ${{product.price}} <del>${{product.price +15}}</del></h5>
+        <p>
+          {{product.description}}
+        </p>
+   
+  
+        <div class="quantity">
+          <h3>Quantity:</h3> 
+          <input type="number" value="1" min="1" /> 
+          <button style="margin-left:8px;">Add to Cart</button>
+        </div>
+   
+      </div> 
+    
+  </section>
+}
+</div>
