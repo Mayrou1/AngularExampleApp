@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Product } from '../../../models/product';
 import { ProductService } from '../../../services/product.service';
 import { NgPipesModule } from 'ngx-pipes';
-import { RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router'; 
+ 
 
 @Component({
   selector: 'app-list-product',
@@ -13,14 +14,19 @@ import { RouterModule } from '@angular/router';
 })
 export class ListProductComponent {
   products: Product[] = [];
+  showLoader:boolean = true; 
 
-  constructor(private productService: ProductService){
+  constructor(private productService: ProductService, 
+  ){ 
     this.loadProducts();
   }
 
   loadProducts(){
     this.productService.getProducts().subscribe({
-      next:(res: Product[])=>{this.products = res},
+      next:(res: Product[])=>{
+        this.products = res; 
+        this.showLoader = false; 
+      },
       error:(err)=>{console.log(err)}
     })
   }

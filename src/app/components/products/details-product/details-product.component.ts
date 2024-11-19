@@ -14,6 +14,7 @@ import { error } from 'console';
 export class DetailsProductComponent {
   product!: Product;
   productId!:number; 
+  featuredImage!:string; 
   constructor(private productService: ProductService, 
     private activateRoute: ActivatedRoute
   ){
@@ -24,7 +25,9 @@ export class DetailsProductComponent {
 
   loadProductDetails(){
     this.productService.getProduct(this.productId).subscribe({
-      next:(res:Product)=>{this.product = res; console.log(res)},
+      next:(res:Product)=>{
+        this.product = res; 
+        this.featuredImage = this.product.images[0];},
       error:(err)=>{console.log(err)},
     })
   }

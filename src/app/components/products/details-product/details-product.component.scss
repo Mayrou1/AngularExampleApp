@@ -66,7 +66,7 @@
   .product-info p {
     color: #424551;
     margin: 15px 0;
-    width: 70%;
+    width: 97%;
   }
   
   .sizes p {
@@ -147,4 +147,8 @@
     hr{
       width: 100%;
     }
+}
+.my-featured-class{
+  border: 2px solid #ff6347;  /* Un contour rouge avec une épaisseur de 2px */
+  padding: 10px; 
 }
