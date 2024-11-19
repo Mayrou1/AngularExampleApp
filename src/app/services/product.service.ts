@@ -20,7 +20,7 @@ export class ProductService {
           return (
             product.images && 
             product.images.length > 0 && 
-            !product.images.some((img: string) => img.endsWith('any'))
+            !product.images.some((img: string) => img.startsWith('['))
           );
         })
       )
