@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AjoutMaterialComponent } from './ajout-material.component';
+import { ListProductComponent } from './list-product.component';
 
-describe('AjoutMaterialComponent', () => {
-  let component: AjoutMaterialComponent;
-  let fixture: ComponentFixture<AjoutMaterialComponent>;
+describe('ListProductComponent', () => {
+  let component: ListProductComponent;
+  let fixture: ComponentFixture<ListProductComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AjoutMaterialComponent]
+      imports: [ListProductComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AjoutMaterialComponent);
+    fixture = TestBed.createComponent(ListProductComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
